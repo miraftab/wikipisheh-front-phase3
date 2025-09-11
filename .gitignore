@@ -1,3 +1,11 @@
+# wikipisheh template
+public/**/*.jpg
+public/**/*.png
+public/**/*.jpeg
+public/**/*.svg
+public/**/*.pdf
+.env*
+
 # Logs
 logs
 *.log
