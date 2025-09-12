@@ -1,12 +1,21 @@
-# React + Vite
+# Wikipisheh Frontend – Phase 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of **Wikipisheh**, built with **React 19**.  
+It connects to the Django backend via REST APIs and provides a user-friendly interface for browsing and managing words and their relationships.
 
-Currently, two official plugins are available:
+## Features
+- Search and browse words with definitions.
+- View synonyms, antonyms, and categories.
+- User authentication and profile management.
+- Responsive design for desktop and mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React 19** – UI framework  
+- **React Router** – Routing  
+- **MUI** – Component library  
+- **React Query** – API data fetching and caching
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup
+```bash
+npm install
+npm start
