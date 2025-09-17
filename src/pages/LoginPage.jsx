@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 import WpPageMetaData from "../ui/WpPageMetaData.jsx";
 import LoginForm from "../features/auth/LoginForm.jsx";
@@ -11,14 +11,15 @@ function LoginPage() {
 
   return (
     <Box width="100vw" height="100vh" overflow="hidden" display="flex" flexDirection="column"
-         justifyContent="space-between"
-         alignItems="space-between" position="relative">
-      <WpPageMetaData title="ورود" description="ویکی‌پیشه، فرهنگ واژگان پیشه‌ها" name="ورود" canonicalUrl='login'/>
+         justifyContent="space-between" alignItems="space-between" position="relative">
+      <WpPageMetaData title="ورود" description="ویکی‌پیشه، فرهنگ واژگان پیشه‌ها" name="ورود" canonicalUrl="login"/>
 
       <LoginHeader/>
       <Offset/>
 
-      <LoginForm/>
+      <Box width="100%" flexGrow={1}>
+        <LoginForm/>
+      </Box>
 
       <MainFooter/>
     </Box>
