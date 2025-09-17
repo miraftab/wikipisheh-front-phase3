@@ -10,6 +10,7 @@ import FullPageSpinner from "./ui/FullPageSpinner.jsx";
 import PageBgContainer from "./pages/PageBgContainer.jsx";
 import PageContainer from "./pages/PageContainer.jsx";
 import CheckAuth from "./ui/CheckAuth.jsx";
+import VersionCheck from "./ui/VersionCheck.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
@@ -62,6 +63,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </Suspense>
+      <VersionCheck/>
       <Toaster position="top-center" gutter={12} containerStyle={{margin: "8px"}}
                toastOptions={{
                  success: {
@@ -80,4 +82,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
