@@ -80,7 +80,7 @@ function Colleagues() {
             primary="شورای تخصصی ویکی‌پیشه"
             secondary={
               <Typography variant="body2" sx={{color: "text.primary", display: "inline"}}>
-                اردوان امیری‌نژاد، مهنوش تهرانی، فرشاد سمایی
+                اردوان امیری‌نژاد، مهنوش تهرانی، فرشید سمایی
               </Typography>
             }
           />
