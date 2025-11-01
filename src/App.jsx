@@ -27,13 +27,14 @@ const WordDetailPage = lazy(() => import("./pages/WordDetailPage.jsx"));
 const SuggestedWordFormPage = lazy(() => import("./pages/SuggestedWordFormPage.jsx"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound.jsx"));
 
-
-function usePageTracking() {
+function PageTracker() {
   const location = useLocation();
 
   useEffect(() => {
     ReactGA.send({hitType: "pageview", page: location.pathname + location.search});
   }, [location]);
+
+  return null;
 }
 
 const queryClient = new QueryClient({
@@ -45,13 +46,13 @@ const queryClient = new QueryClient({
 });
 
 function App() {
-  usePageTracking();
 
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
       <Suspense fallback={<FullPageSpinner/>}>
         <BrowserRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+          <PageTracker/>
           <Routes>
             <Route element={<PageBgContainer/>}>
               <Route path="/" exact element={<CheckAuth><HomePage/></CheckAuth>}/>
