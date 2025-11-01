@@ -1,7 +1,8 @@
-import { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { lazy, Suspense, useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import ReactGA from "react-ga4";
 
 import { Toaster } from "react-hot-toast";
 
@@ -27,6 +28,14 @@ const SuggestedWordFormPage = lazy(() => import("./pages/SuggestedWordFormPage.j
 const PageNotFound = lazy(() => import("./pages/PageNotFound.jsx"));
 
 
+function usePageTracking() {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({hitType: "pageview", page: location.pathname + location.search});
+  }, [location]);
+}
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -36,6 +45,7 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  usePageTracking();
 
   return (
     <QueryClientProvider client={queryClient}>
